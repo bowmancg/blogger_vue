@@ -7,8 +7,10 @@
       <div class="col">
         <div class="card-body">
           <div class="d-flex pb-3 align-items-center">
+            <!-- <router-link> -->
             <img class="profile-img me-3" :src="blog?.creator?.picture" alt="" />
             <h4>{{ blog?.creator?.name }}</h4>
+            <!-- </router-link> -->
           </div>
 <img :src="blog?.imgUrl" class="img-card rounded mb-3" alt="..." />
           
