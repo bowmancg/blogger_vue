@@ -1,6 +1,5 @@
 <template>
-  <router-link :to="{name: 'Blog', params: {blogId: blog.id}}">
-  <div @click="setActive(blog?.id)" class="text-dark card elevation-4 my-3">
+  <div  class="text-dark card elevation-4 my-3">
     <div class="row g-0">
       <div class="col-md-8">
         <div class="card-body">
@@ -13,14 +12,16 @@
           <p class="card-text">
             <small class="text-body-secondary">{{ blog?.createdAt }}</small>
           </p>
+          <router-link :to="{name: 'Blog', params: {blogId: blog.id}}">
+          <button @click="setActive(blog?.id)">See more</button>
+        </router-link>
         </div>
       </div>
       <div class="col-md-4">
-        <img :src="blog?.imgUrl" class="img-fluid rounded-end" alt="..." />
+        <img :src="blog?.imgUrl" class="img-card rounded-end" alt="..." />
       </div>
     </div>
   </div>
-  </router-link>
 </template>
 
 <script>
@@ -60,4 +61,11 @@ export default {
 .card:hover {
   transform: scale(1.02);
 }
+.img-card {
+  height: 40vh;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
 </style>

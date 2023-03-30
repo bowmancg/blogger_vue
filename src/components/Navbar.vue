@@ -18,16 +18,16 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
-      <!-- <ul class="navbar-nav me-auto">
+      <ul class="navbar-nav me-auto">
         <li>
-          <router-link
+          <!-- <router-link
             :to="{ name: 'About' }"
             class="btn text-dark lighten-30 selectable text-uppercase"
           >
             About
-          </router-link>
+          </router-link> -->
         </li>
-      </ul> -->
+      </ul>
       <!-- LOGIN COMPONENT HERE -->
       <Login />
     </div>
