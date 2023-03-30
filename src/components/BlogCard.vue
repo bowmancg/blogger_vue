@@ -1,5 +1,5 @@
 <template>
-  <router-link :to="{name: 'Profile', params: {profileId: blog.creatorId}}">
+  <router-link :to="{name: 'Blog', params: {blogId: blog.id}}">
   <div @click="setActive(blog?.id)" class="text-dark card elevation-4 my-3">
     <div class="row g-0">
       <div class="col-md-8">

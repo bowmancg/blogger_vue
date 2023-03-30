@@ -18,11 +18,11 @@ class BlogsService {
         logger.log(AppState.activeBlog)
     }
 
-    // async getBlogById(blogId) {
-    //     const res = await api.get(`api/blogs/${blogId}`)
-    //     logger.log('[GET ID]', res.data)
-    //     AppState.activeBlog = new Blog(res.data)
-    // }
+    async getBlogById(blogId) {
+        const res = await api.get(`api/blogs/${blogId}`)
+        logger.log('[GET ID]', res.data)
+        AppState.activeBlog = new Blog(res.data)
+    }
 }
 
 export const blogsService = new BlogsService()
