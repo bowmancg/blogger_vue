@@ -1,27 +1,27 @@
 <template>
 <div class="container-fluid">
-<section class="row">
-
- <div class="text-dark card elevation-4 my-3">
+<section class="row justify-content-center">
+<div class="col-7">
+<div class="text-dark card elevation-4 my-3">
     <div class="row g-0">
-      <div class="col-md-8">
+      <div class="col">
         <div class="card-body">
-          <div class="d-flex pb-3">
+          <div class="d-flex pb-3 align-items-center">
             <img class="profile-img me-3" :src="blog?.creator?.picture" alt="" />
             <h4>{{ blog?.creator?.name }}</h4>
           </div>
+<img :src="blog?.imgUrl" class="img-card rounded mb-3" alt="..." />
+          
           <h5 class="card-title">{{ blog?.title }}</h5>
           <p class="card-text">{{ blog?.body }}</p>
-          <p class="card-text">
+          <p class="card-text">Created: 
             <small class="text-body-secondary">{{ blog?.createdAt }}</small>
           </p>
         </div>
       </div>
-      <div class="col-md-4">
-        <img :src="blog?.imgUrl" class="img-fluid rounded-end" alt="..." />
-      </div>
     </div>
   </div>
+</div>
 </section>
 
 </div>
@@ -71,6 +71,17 @@ const route = useRoute()
 }
 </script>
 
-<style>
+<style lang="scss" scoped> 
+.profile-img {
+  height: 7vh;
+  width: 7vh;
+  border-radius: 50%;
+}
+.img-card {
+  height: 30vh;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
 
 </style>
