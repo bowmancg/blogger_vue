@@ -30,20 +30,13 @@
 <script>
 import { Blog } from '../models/Blog.js';
 import { computed, onMounted } from 'vue';
-import Navbar from '../components/Navbar.vue';
 import { useRoute } from 'vue-router';
 import { logger } from '../utils/Logger.js';
 import { AppState } from '../AppState.js';
 import Pop from '../utils/Pop.js';
-import { profilesService } from '../services/ProfilesService.js'
 import { blogsService } from '../services/BlogsService.js';
 
 export default {
-    props: {
-    blog: {
-      type: Blog,
-      required: true,
-    },
     setup() {
 const route = useRoute()
 
@@ -71,12 +64,11 @@ const route = useRoute()
             getBlogById()
         })
         return {
-            route,
-            profile: computed(() => AppState.activeProfile),
-            blogs: computed(() => AppState.activeBlog)
+          route,
+          blog: computed(() => AppState.blog)
         }
     }
-}}
+}
 </script>
 
 <style>

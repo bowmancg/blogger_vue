@@ -14,14 +14,14 @@ class BlogsService {
 
     setActive(blogId) {
         const blog = AppState.blogs.find(b => b.id == blogId)
-        AppState.activeBlog = blog
-        logger.log(AppState.activeBlog)
+        AppState.blog = blog
+        logger.log(AppState.blog)
     }
 
     async getBlogById(blogId) {
         const res = await api.get(`api/blogs/${blogId}`)
         logger.log('[GET ID]', res.data)
-        AppState.activeBlog = new Blog(res.data)
+        AppState.blog = new Blog(res.data)
     }
 }
 
