@@ -26,10 +26,7 @@ const routes = [
     path: '/blogs/:blogId',
     name: 'Blog',
     component: loadPage('BlogPage')
-  },
-  // {
-  //   path: '/profile/:profile'
-  // }
+  }
 ]
 
 export const router = createRouter({
