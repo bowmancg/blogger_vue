@@ -1,9 +1,13 @@
 <template>
-    <header>
-        <Navbar />
-    </header>
 <div class="container-fluid">
-
+<section class="row">
+    <div class="col-12">
+        <h2 class="p-2">Blogs: {{ blogs.title }}</h2>
+    </div>
+    <div class="col-12 col-md-3 my-3" v-for="b in blogs" :key="b.id">
+        <BlogCard :blog="b" />
+    </div>
+</section>
 </div>
 </template>
 
@@ -20,15 +24,7 @@ export default {
     setup() {
 const route = useRoute()
 
-// async function getBlogsById() {
-//     try {
-//         const blogId = route.params.blogId
-//         await blogsService.getBlogById(blogId)
-//     } catch (error) {
-//         logger.error(error.message)
-//         Pop.error(error.message)
-//     }
-// }
+
         return {
 
         }
