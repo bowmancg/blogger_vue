@@ -14,10 +14,29 @@
 </template>
 
 <script>
+import { onMounted, computed } from 'vue';
+import { AppState } from '../AppState.js'
+import { blogsService } from '../services/BlogsService';
+import { logger } from '../utils/Logger.js';
+import Pop from '../utils/Pop.js';
+
 export default {
   setup() {
-    return {}
+    async function getBlogs() {
+      // logger.log('getting blogs')
+      try {
+        await blogsService.getBlogs()
+      } catch (error) {
+        Pop.error(error.message)
+        logger.log(error.message)
+      }
+    }
+    onMounted(() => getBlogs())
+    return {
+      blogs: computed(() => AppState.blogs)
+    }
   }
+  
 }
 </script>
 
