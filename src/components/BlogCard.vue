@@ -1,22 +1,22 @@
 <template>
   <router-link :to="{name: 'Profile', params: {profileId: blog.creatorId}}">
-  <div @click="setActive(blog.id)" class="card elevation-4 my-3">
+  <div @click="setActive(blog?.id)" class="text-dark card elevation-4 my-3">
     <div class="row g-0">
       <div class="col-md-8">
         <div class="card-body">
-          <div class="d-flex">
+          <div class="d-flex pb-3">
             <img class="profile-img me-3" :src="blog.creator.picture" alt="" />
-            <h4>{{ blog.creator.name }}</h4>
+            <h4>{{ blog?.creator?.name }}</h4>
           </div>
           <h5 class="card-title">{{ blog?.title }}</h5>
-          <p class="card-text">{{ blog.body }}</p>
+          <!-- <p class="card-text">{{ blog?.body }}</p> -->
           <p class="card-text">
-            <small class="text-body-secondary">{{ blog.createdAt }}</small>
+            <small class="text-body-secondary">{{ blog?.createdAt }}</small>
           </p>
         </div>
       </div>
       <div class="col-md-4">
-        <img :src="blog.imgUrl" class="img-fluid rounded-end" alt="..." />
+        <img :src="blog?.imgUrl" class="img-fluid rounded-end" alt="..." />
       </div>
     </div>
   </div>
